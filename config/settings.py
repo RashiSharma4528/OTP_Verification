@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,13 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d(9wt%(_17xw+-3#7124*@h#7=#z@ehu2v=+7rk7^c5l9s@r#6'
+SECRET_KEY = '!&m3s-7$_s)@e61+8m^bs0eq$+2q^h-l4mvu$(e*zya(qc0j+f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -54,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -123,6 +132,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
@@ -150,4 +163,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = "sharmarashi45346@gmail.com"
-EMAIL_HOST_PASSWORD = "sdgk ljal nrwj vqjk"
+EMAIL_HOST_PASSWORD = "kaco tryk kwto aohm"
