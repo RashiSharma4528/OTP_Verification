@@ -169,5 +169,5 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
-BREVO_API_KEY = os.getenv("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")
-BREVO_SENDER_EMAIL = os.getenv("sharmarashi45346@gmail.com")
+BREVO_API_KEY = os.getenv("BREVO_API_KEY")
+BREVO_SENDER_EMAIL = os.getenv("BREVO_SENDER_EMAIL")
