@@ -169,12 +169,5 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-EMAIL_HOST_USER = "sharmarashi45346@gmail.com"
-EMAIL_HOST_PASSWORD = "kaco tryk kwto aohm"
+BREVO_API_KEY = os.getenv("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")
+BREVO_SENDER_EMAIL = os.getenv("sharmarashi45346@gmail.com")
